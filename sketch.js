@@ -24,7 +24,23 @@ function preload(){
 
 
 function setup() {
-  createCanvas(600, 600);
+  var ismobile=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+    if (ismobile){
+
+      canW=displayWidth;
+      canH=displayHeight;
+
+    createCanvas(canW,canH)
+  }
+    else{
+
+
+      canW=windowWidth;
+      canH=windowHeight;
+
+    createCanvas(canW,canH)
+
+}
   
   //creating sword
    knife=createSprite(40,200,20,20);
@@ -139,4 +155,5 @@ function fruits(){
     
     fruitGroup.add(fruit);
   }
+
 }
